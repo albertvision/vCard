@@ -1,0 +1,11 @@
+Options -Indexes
+
+ErrorDocument 404 /errors/notFound.php
+ErrorDocument 403 /errors/accessDenied.php
+ErrorDocument 500 /errors/interalServerError.php
+RewriteEngine on
+
+#Pages
+RewriteRule ^admin/([^/]*).html$ admin/$1.php [L]
+RewriteRule ^page/([^/]*).html$ page.php?link=$1 [L]
+RewriteRule ^([^/]*).html$ $1.php [L]
